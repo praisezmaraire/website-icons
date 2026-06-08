@@ -19,6 +19,47 @@
 <meta name="twitter:description" content="Quality aftermarket &amp; used parts for ex-Japanese vehicles. Nissan Caravan specialists.">
 <meta name="twitter:image" content="images/hero-main.jpg">
 <title>One Stone Auto Parts | Delivering Value</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoPartsStore",
+  "name": "One Stone Auto Parts",
+  "description": "Harare's trusted aftermarket specialist since 2011. Zimbabwe's #1 Nissan Caravan parts supplier — E24, E25 & E26. 5 branches, 5,000+ parts in stock.",
+  "url": "https://onestonautoparts.co.zw",
+  "logo": "https://onestonautoparts.co.zw/Images/logo-brand.png",
+  "image": "https://onestonautoparts.co.zw/images/hero-main.jpg",
+  "telephone": "+263772904805",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Seke Road",
+    "addressLocality": "Harare",
+    "addressCountry": "ZW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -17.8252,
+    "longitude": 31.0335
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:30",
+      "closes": "17:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "07:30",
+      "closes": "13:00"
+    }
+  ],
+  "sameAs": ["https://wa.me/263715264875"],
+  "priceRange": "$$",
+  "currenciesAccepted": "USD, ZWL",
+  "paymentAccepted": "Cash, EcoCash, Swipe"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -579,6 +620,85 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
 
 /* ── Focus ring ── */
 *:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:3px}
+
+/* ── Dark Mode (JS-controlled) ── */
+html.dark{
+  --bg-body:#0C0C0C;--bg-card:#171717;--bg-section:#0C0C0C;--bg-section-alt:#141414;
+  --bg-nav:rgba(12,12,12,0.92);--bg-footer:#080808;--text-primary:#F2F2F0;
+  --text-secondary:#C8C8C8;--text-muted:#767676;--border:rgba(255,255,255,0.07);
+  --border-strong:rgba(255,255,255,0.12);--grey-50:#1A1A1A;--grey-100:#222;
+  --shadow-sm:0 2px 12px rgba(0,0,0,0.35);--shadow-md:0 6px 24px rgba(0,0,0,0.45);
+  --shadow-lg:0 16px 48px rgba(0,0,0,0.55);
+}
+html.light{
+  --bg-body:#FAFAF8;--bg-card:#FFF;--bg-section:#FAFAF8;--bg-section-alt:#FFF;
+  --bg-nav:rgba(255,255,255,0.88);--bg-footer:#111;--text-primary:#0D0D0D;
+  --text-secondary:#3A3A3A;--text-muted:#888;--border:rgba(0,0,0,0.08);
+  --border-strong:rgba(0,0,0,0.14);--grey-50:#F7F7F5;--grey-100:#E5E5E5;
+  --shadow-sm:0 2px 12px rgba(0,0,0,0.07);--shadow-md:0 6px 24px rgba(0,0,0,0.10);
+  --shadow-lg:0 16px 48px rgba(0,0,0,0.14);
+}
+
+/* ── Dark Mode Toggle Button ── */
+.dark-toggle{background:none;border:1.5px solid var(--border-strong);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);cursor:pointer;transition:var(--transition);flex-shrink:0;margin-right:2px}
+.dark-toggle:hover{border-color:var(--red);color:var(--red);transform:rotate(20deg)}
+.dark-toggle svg{width:15px;height:15px;flex-shrink:0;transition:var(--transition)}
+.dt-sun,.dt-moon{transition:opacity 0.2s,transform 0.3s}
+html:not(.dark) .dt-moon{display:none}
+html.dark .dt-sun{display:none}
+/* when system is dark and no class set, hide moon (media handles it already) */
+@media(prefers-color-scheme:dark){html:not(.light):not(.dark) .dt-sun{display:none}}
+@media(prefers-color-scheme:dark){html:not(.light):not(.dark) .dt-moon{display:block}}
+
+/* ── Shimmer Skeleton (replaces spinner) ── */
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.lazy-spinner{background:linear-gradient(90deg,var(--grey-50) 25%,rgba(150,150,150,0.12) 50%,var(--grey-50) 75%);background-size:200% 100%;animation:shimmer 1.6s ease-in-out infinite}
+.lazy-spinner::after{display:none}
+
+/* ── Trust Ticker ── */
+.trust-ticker{background:var(--black);padding:0;overflow:hidden;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+.ticker-track{display:flex;align-items:center;gap:0;white-space:nowrap;animation:ticker 28s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;padding:10px 28px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,0.45)}
+.ticker-item strong{color:var(--red)}
+.ticker-sep{color:rgba(255,255,255,0.15);font-size:16px;padding:0 4px}
+
+/* ── Proactive WhatsApp Popup ── */
+.wa-promo{position:fixed;bottom:90px;right:24px;z-index:9995;width:300px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);padding:18px 18px 14px;transform:translateY(20px) scale(0.95);opacity:0;pointer-events:none;transition:all 0.4s var(--ease-spring)}
+.wa-promo.show{transform:translateY(0) scale(1);opacity:1;pointer-events:auto}
+.wa-promo-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:12px}
+.wa-promo-close{background:none;border:none;color:var(--text-muted);font-size:16px;cursor:pointer;line-height:1;padding:2px;flex-shrink:0;transition:color 0.2s}
+.wa-promo-close:hover{color:var(--text-primary)}
+.wa-promo-icon{width:42px;height:42px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-promo-icon svg{width:22px;height:22px;fill:#fff}
+.wa-promo-body{flex:1}
+.wa-promo-brand{font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px}
+.wa-promo-msg{font-size:13px;color:var(--text-muted);line-height:1.5}
+.wa-promo-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px;background:#25D366;color:#fff;border-radius:var(--radius-md);font-size:12px;font-weight:700;letter-spacing:0.06em;transition:var(--transition);margin-top:12px}
+.wa-promo-btn:hover{background:#1da851;transform:translateY(-1px)}
+.wa-promo-typing{display:flex;align-items:center;gap:5px;margin-top:6px}
+.wa-promo-typing span{font-size:11px;color:var(--text-muted)}
+.typing-dots{display:flex;gap:3px}
+.typing-dots i{width:5px;height:5px;border-radius:50%;background:var(--text-muted);display:block;animation:typingBounce 1.2s ease infinite}
+.typing-dots i:nth-child(2){animation-delay:0.2s}
+.typing-dots i:nth-child(3){animation-delay:0.4s}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
+@media(max-width:768px){.wa-promo{bottom:82px;right:12px;left:12px;width:auto}}
+
+/* ── Quick Part Request Modal ── */
+.qr-trigger{position:fixed;bottom:24px;left:24px;z-index:9996;display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:12px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;box-shadow:var(--shadow-red);cursor:pointer;border:none;transition:all 0.35s var(--ease-spring)}
+.qr-trigger:hover{background:var(--red-dark);transform:translateY(-2px) scale(1.03)}
+.qr-trigger svg{width:16px;height:16px;fill:#fff;flex-shrink:0}
+@media(max-width:768px){.qr-trigger{bottom:76px;left:12px;padding:10px 14px;font-size:10px}}
+.qr-modal{position:fixed;inset:0;z-index:99980;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity 0.3s}
+.qr-modal.open{opacity:1;pointer-events:auto}
+.qr-box{background:var(--bg-card);border-radius:var(--radius-lg);padding:32px;width:100%;max-width:460px;box-shadow:var(--shadow-xl);transform:translateY(24px) scale(0.96);transition:transform 0.4s var(--ease-spring),opacity 0.3s;position:relative}
+.qr-modal.open .qr-box{transform:translateY(0) scale(1)}
+.qr-box h3{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--text-primary);text-transform:uppercase;margin-bottom:4px}
+.qr-box p{font-size:13px;color:var(--text-muted);margin-bottom:22px}
+.qr-close{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;background:var(--grey-50);border:none;cursor:pointer;color:var(--text-muted);font-size:16px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.qr-close:hover{background:var(--red);color:#fff}
 </style>
 </head>
 <body>
@@ -603,6 +723,10 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
       <a href="#" data-page="brands" onclick="navigateTo('brands')" aria-label="Our brands">Brands</a>
       <a href="#" data-page="contact" onclick="navigateTo('contact')" aria-label="Contact us">Contact</a>
       <span class="nav-status closed" id="navStatus" aria-live="polite"><span class="status-dot"></span><span id="statusText">Closed</span></span>
+      <button class="dark-toggle" id="darkToggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+        <svg class="dt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="dt-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <a href="tel:0772904805" class="nav-cta" aria-label="Call One Stone Auto Parts">Call Now</a>
     </div>
     <button class="nav-mobile-btn" id="mobileBtn" onclick="toggleMobileMenu()">
@@ -686,6 +810,27 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
       <div class="scroll-hint-line"></div>
     </div>
   </section>
+
+  <!-- TRUST TICKER -->
+  <div class="trust-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">🏆 <strong>Zimbabwe's #1</strong> Nissan Caravan Specialist</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">✅ <strong>5,000+</strong> Parts In Stock</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">📍 <strong>5 Branches</strong> Across Harare</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">⚡ Same-Day <strong>Dispatch Available</strong></span><span class="ticker-sep">·</span>
+      <span class="ticker-item">🔩 E24 · E25 · <strong>E26 Models</strong></span><span class="ticker-sep">·</span>
+      <span class="ticker-item">🛡️ <strong>Kanagava</strong> Exclusive Distributor</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">📅 <strong>15+ Years</strong> of Trusted Service</span><span class="ticker-sep">·</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item">🏆 <strong>Zimbabwe's #1</strong> Nissan Caravan Specialist</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">✅ <strong>5,000+</strong> Parts In Stock</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">📍 <strong>5 Branches</strong> Across Harare</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">⚡ Same-Day <strong>Dispatch Available</strong></span><span class="ticker-sep">·</span>
+      <span class="ticker-item">🔩 E24 · E25 · <strong>E26 Models</strong></span><span class="ticker-sep">·</span>
+      <span class="ticker-item">🛡️ <strong>Kanagava</strong> Exclusive Distributor</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">📅 <strong>15+ Years</strong> of Trusted Service</span><span class="ticker-sep">·</span>
+    </div>
+  </div>
 
   <!-- STATS BAR -->
   <section class="stats-bar">
@@ -1397,8 +1542,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
 
 <script>
 /* ── Navigation ── */
-function navigateTo(page, e) {
-  if (e) e.preventDefault();
+function navigateTo(page, skipHistory) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   document.querySelectorAll('.nav-links a[data-page]').forEach(a => a.classList.remove('active'));
@@ -1407,12 +1551,11 @@ function navigateTo(page, e) {
   document.getElementById('mobileMenu').classList.remove('open');
   document.getElementById('mobileBtn').classList.remove('open');
   window.scrollTo({top: 0, behavior: 'smooth'});
-  // Reset counters in target page so they replay on each visit
+  if (!skipHistory) history.pushState({page}, '', '#' + page);
   document.querySelectorAll('#page-' + page + ' .counter').forEach(c => {
     c.classList.remove('counted');
     c.textContent = '0';
   });
-  // Clear catalogue search when leaving
   const cs = document.getElementById('catalogueSearch');
   if (cs) { cs.value = ''; searchCatalogue(''); }
   setTimeout(() => { initLazy(); initAnimations(); initCounters(); }, 120);
@@ -1444,6 +1587,10 @@ function goToSlide(i) {
 function nextSlide() {
   const slides = document.querySelectorAll('.hero-slide');
   goToSlide((currentSlide + 1) % slides.length);
+}
+function prevSlide() {
+  const slides = document.querySelectorAll('.hero-slide');
+  goToSlide((currentSlide - 1 + slides.length) % slides.length);
 }
 
 /* ── Lazy Loading ── */
@@ -1666,6 +1813,99 @@ function showToast(msg, type = 'info') {
   }, 3000);
 }
 
+/* ── Dark Mode ── */
+function initDarkMode() {
+  const saved = localStorage.getItem('colorScheme');
+  if (saved) {
+    document.documentElement.classList.add(saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.classList.add('dark');
+  }
+}
+
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const isDark = html.classList.contains('dark');
+  html.classList.remove('dark', 'light');
+  html.classList.add(isDark ? 'light' : 'dark');
+  localStorage.setItem('colorScheme', isDark ? 'light' : 'dark');
+}
+
+/* ── Proactive WA Popup ── */
+function schedulePromo() {
+  if (sessionStorage.getItem('promoDismissed')) return;
+  setTimeout(() => {
+    const el = document.getElementById('waPromo');
+    if (el && !sessionStorage.getItem('promoDismissed')) el.classList.add('show');
+  }, 10000);
+}
+
+function dismissPromo() {
+  const el = document.getElementById('waPromo');
+  if (el) el.classList.remove('show');
+  sessionStorage.setItem('promoDismissed', '1');
+}
+
+/* ── Quick Part Request ── */
+function openQR() {
+  document.getElementById('qrModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('qr-part').focus(), 100);
+}
+
+function closeQR() {
+  document.getElementById('qrModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitQR() {
+  const part    = (document.getElementById('qr-part').value || '').trim();
+  const vehicle = (document.getElementById('qr-vehicle').value || '').trim();
+  const name    = (document.getElementById('qr-name').value || '').trim();
+  if (!part) { showToast('Please describe the part you need.', 'error'); return; }
+  let text = 'Hi One Stone Auto Parts! 👋\n\n🔧 Part needed: ' + part;
+  if (vehicle) text += '\n🚗 Vehicle: ' + vehicle;
+  if (name)    text += '\n👤 Name: ' + name;
+  text += '\n\nPlease send me a price. Thank you!';
+  window.open('https://wa.me/263715264875?text=' + encodeURIComponent(text), '_blank');
+  closeQR();
+  showToast('Opening WhatsApp — we\'ll reply shortly!', 'success');
+  ['qr-part','qr-vehicle','qr-name'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+}
+
+/* ── Hero Touch Swipe ── */
+function initHeroSwipe() {
+  const hs = document.getElementById('heroSlideshow');
+  if (!hs) return;
+  let startX = 0;
+  hs.addEventListener('touchstart', e => { startX = e.changedTouches[0].clientX; }, {passive: true});
+  hs.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) < 40) return;
+    dx < 0 ? nextSlide() : prevSlide();
+  }, {passive: true});
+}
+
+/* ── Page Visibility (pause slideshow when tab hidden) ── */
+function initVisibility() {
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(slideTimer);
+    } else {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, 5500);
+    }
+  });
+}
+
+/* ── History API (back button) ── */
+function initHistory() {
+  window.addEventListener('popstate', e => {
+    const page = (e.state && e.state.page) ? e.state.page : 'home';
+    navigateTo(page, true);
+  });
+}
+
 /* ── Catalogue Text Search ── */
 function searchCatalogue(query) {
   const q = query.toLowerCase().trim();
@@ -1682,6 +1922,7 @@ function searchCatalogue(query) {
 
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
   slideTimer = setInterval(nextSlide, 5500);
   initLazy();
   initAnimations();
@@ -1690,10 +1931,72 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollTop();
   initLightbox();
   initFilterCounts();
+  initHeroSwipe();
+  initVisibility();
+  initHistory();
+  schedulePromo();
   updateStatus();
-  setInterval(updateStatus, 60000); // re-check every minute
+  setInterval(updateStatus, 60000);
+  // Handle initial hash navigation (e.g. direct link to #catalogue)
+  const initPage = (location.hash || '').replace('#', '') || 'home';
+  const validPages = ['home','about','catalogue','brands','contact'];
+  if (validPages.includes(initPage) && initPage !== 'home') navigateTo(initPage, true);
+  // Set initial history state so back button works from first page
+  history.replaceState({page: initPage}, '', location.href);
 });
 </script>
+
+<!-- ── PROACTIVE WA POPUP ── -->
+<div class="wa-promo" id="waPromo" role="dialog" aria-label="Chat with us on WhatsApp" aria-modal="true">
+  <div class="wa-promo-top">
+    <div class="wa-promo-icon">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L0 24l6.335-1.533A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 01-5.006-1.368l-.36-.214-3.732.979.996-3.638-.234-.374A9.817 9.817 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+    </div>
+    <div class="wa-promo-body">
+      <div class="wa-promo-brand">One Stone Auto Parts</div>
+      <div class="wa-promo-msg">Need a part? We usually reply in minutes!</div>
+    </div>
+    <button class="wa-promo-close" onclick="dismissPromo()" aria-label="Dismiss">✕</button>
+  </div>
+  <div class="wa-promo-typing">
+    <span>Typing</span>
+    <div class="typing-dots"><i></i><i></i><i></i></div>
+  </div>
+  <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%27m%20looking%20for%20a%20part." target="_blank" class="wa-promo-btn" onclick="dismissPromo()">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    Chat on WhatsApp
+  </a>
+</div>
+
+<!-- ── QUICK PART REQUEST ── -->
+<button class="qr-trigger" id="qrTrigger" onclick="openQR()" aria-label="Quick part request">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+  Quick Request
+</button>
+
+<div class="qr-modal" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="qrTitle" onclick="if(event.target===this)closeQR()">
+  <div class="qr-box">
+    <button class="qr-close" onclick="closeQR()" aria-label="Close">✕</button>
+    <h3 id="qrTitle">Quick Part Request</h3>
+    <p>Tell us what you need — we'll WhatsApp you a price instantly.</p>
+    <div class="form-group">
+      <label for="qr-part">Part / Description</label>
+      <input id="qr-part" type="text" placeholder="e.g. E25 rear brake pads" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="qr-vehicle">Vehicle &amp; Year</label>
+      <input id="qr-vehicle" type="text" placeholder="e.g. Nissan Caravan E25 2008" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="qr-name">Your Name (optional)</label>
+      <input id="qr-name" type="text" placeholder="e.g. Tendai" autocomplete="name">
+    </div>
+    <button class="btn-submit" onclick="submitQR()">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      Send via WhatsApp
+    </button>
+  </div>
+</div>
 
 <!-- ── SCROLL TO TOP ── -->
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
