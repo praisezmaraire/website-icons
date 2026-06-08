@@ -4,8 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="One Stone Auto Parts — Harare's trusted aftermarket supplier for ex-Japanese vehicles. Nissan Caravan E24, E25, E26 specialists.">
+<meta name="keywords" content="auto parts Harare, Nissan Caravan parts, E24 E25 E26 parts, aftermarket parts Zimbabwe, Kanagava, brake pads Zimbabwe, car parts Harare">
+<meta name="author" content="One Stone Auto Parts">
+<meta name="theme-color" content="#C8102E">
+<!-- Open Graph -->
+<meta property="og:title" content="One Stone Auto Parts | Delivering Value">
+<meta property="og:description" content="Harare's trusted aftermarket specialist since 2011. Zimbabwe's #1 Nissan Caravan parts supplier — E24, E25 &amp; E26. 5 branches, 5,000+ parts in stock.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero-main.jpg">
+<meta property="og:locale" content="en_ZW">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One Stone Auto Parts | Harare">
+<meta name="twitter:description" content="Quality aftermarket &amp; used parts for ex-Japanese vehicles. Nissan Caravan specialists.">
+<meta name="twitter:image" content="images/hero-main.jpg">
 <title>One Stone Auto Parts | Delivering Value</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -508,10 +523,67 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
 .toast.fade-out{animation:toastOut 0.3s var(--ease) forwards}
 @keyframes toastIn{from{opacity:0;transform:translateY(14px) scale(0.88)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes toastOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(10px) scale(0.92)}}
+
+/* ── Skip Link (accessibility) ── */
+.skip-link{position:fixed;top:-100px;left:16px;z-index:99999;background:var(--red);color:#fff;padding:10px 20px;border-radius:var(--radius-sm);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;transition:top 0.2s;text-decoration:none}
+.skip-link:focus{top:16px}
+
+/* ── Nav Status Chip ── */
+.nav-status{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:0.06em;padding:5px 11px;border-radius:50px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.22);color:#1da851;margin-right:4px;transition:var(--transition);white-space:nowrap}
+.nav-status.closed{background:rgba(200,16,46,0.08);border-color:rgba(200,16,46,0.2);color:var(--red)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#25D366;flex-shrink:0;transition:background 0.3s}
+.nav-status.closed .status-dot{background:var(--red)}
+@media(max-width:900px){.nav-status{display:none}}
+
+/* ── Vehicle Enquiry Strip ── */
+.veh-strip{background:var(--charcoal);padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.veh-inner{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.veh-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;white-space:nowrap;flex-shrink:0}
+.veh-makes{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.veh-btn{display:inline-block;padding:7px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.04em;transition:var(--transition);white-space:nowrap}
+.veh-btn:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-1px)}
+.veh-btn.featured{background:rgba(200,16,46,0.18);border-color:rgba(200,16,46,0.4);color:var(--red)}
+.veh-btn.featured:hover{background:var(--red);color:#fff}
+@media(max-width:600px){.veh-label{width:100%}}
+
+/* ── FAQ Accordion ── */
+.faq-section{padding:72px 0}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:0.02em;transition:color 0.3s}
+.faq-q:hover{color:var(--red)}
+.faq-q.open{color:var(--red)}
+.faq-icon{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--border-strong);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:400;color:var(--text-muted);flex-shrink:0;transition:var(--transition);line-height:1}
+.faq-q.open .faq-icon{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease-out),padding 0.3s}
+.faq-a.open{max-height:300px;padding-bottom:20px}
+.faq-a p{font-size:14px;color:var(--text-muted);line-height:1.85}
+
+/* ── Scroll-to-Top ── */
+.scroll-top{position:fixed;bottom:100px;right:24px;z-index:9996;width:44px;height:44px;background:var(--bg-card);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity 0.35s var(--ease),transform 0.35s var(--ease),background 0.2s,border-color 0.2s;pointer-events:none}
+.scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.scroll-top:hover{background:var(--red);border-color:var(--red)}
+.scroll-top svg{width:18px;height:18px;stroke:var(--text-muted);transition:stroke 0.2s;flex-shrink:0}
+.scroll-top:hover svg{stroke:#fff}
+@media(max-width:768px){.scroll-top{bottom:90px;right:16px;width:40px;height:40px}}
+
+/* ── Lightbox ── */
+.lightbox{position:fixed;inset:0;z-index:99990;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s var(--ease)}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox-img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:var(--radius-md);box-shadow:var(--shadow-xl);transform:scale(0.92);transition:transform 0.35s var(--ease-spring)}
+.lightbox.open .lightbox-img{transform:scale(1)}
+.lightbox-close{position:absolute;top:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition)}
+.lightbox-close:hover{background:var(--red);border-color:var(--red)}
+.lightbox-caption{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.55);font-size:13px;letter-spacing:0.04em;white-space:nowrap}
+
+/* ── Focus ring ── */
+*:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:3px}
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ── NAV ── -->
@@ -525,12 +597,13 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
       </div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="#" data-page="home" class="active" onclick="navigateTo('home')">Home</a>
-      <a href="#" data-page="about" onclick="navigateTo('about')">About</a>
-      <a href="#" data-page="catalogue" onclick="navigateTo('catalogue')">Catalogue</a>
-      <a href="#" data-page="brands" onclick="navigateTo('brands')">Brands</a>
-      <a href="#" data-page="contact" onclick="navigateTo('contact')">Contact</a>
-      <a href="tel:0772904805" class="nav-cta">Call Now</a>
+      <a href="#" data-page="home" class="active" onclick="navigateTo('home')" aria-label="Home">Home</a>
+      <a href="#" data-page="about" onclick="navigateTo('about')" aria-label="About us">About</a>
+      <a href="#" data-page="catalogue" onclick="navigateTo('catalogue')" aria-label="Product catalogue">Catalogue</a>
+      <a href="#" data-page="brands" onclick="navigateTo('brands')" aria-label="Our brands">Brands</a>
+      <a href="#" data-page="contact" onclick="navigateTo('contact')" aria-label="Contact us">Contact</a>
+      <span class="nav-status closed" id="navStatus" aria-live="polite"><span class="status-dot"></span><span id="statusText">Closed</span></span>
+      <a href="tel:0772904805" class="nav-cta" aria-label="Call One Stone Auto Parts">Call Now</a>
     </div>
     <button class="nav-mobile-btn" id="mobileBtn" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
@@ -557,6 +630,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
      HOME PAGE
      ════════════════════════════════ -->
 <div class="page active" id="page-home">
+<div id="main-content"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -634,6 +708,23 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
       </div>
     </div>
   </section>
+
+  <!-- VEHICLE QUICK ENQUIRY STRIP -->
+  <div class="veh-strip">
+    <div class="container">
+      <div class="veh-inner">
+        <span class="veh-label">Find parts for:</span>
+        <div class="veh-makes">
+          <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%20need%20parts%20for%20my%20Nissan%20Caravan." target="_blank" class="veh-btn featured" aria-label="Enquire about Nissan Caravan parts">Nissan Caravan ★</a>
+          <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%20need%20parts%20for%20my%20Toyota." target="_blank" class="veh-btn" aria-label="Enquire about Toyota parts">Toyota</a>
+          <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%20need%20parts%20for%20my%20Honda." target="_blank" class="veh-btn" aria-label="Enquire about Honda parts">Honda</a>
+          <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%20need%20parts%20for%20my%20Mazda." target="_blank" class="veh-btn" aria-label="Enquire about Mazda parts">Mazda</a>
+          <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%20need%20parts%20for%20my%20Isuzu." target="_blank" class="veh-btn" aria-label="Enquire about Isuzu parts">Isuzu</a>
+          <a href="https://wa.me/263715264875?text=Hi%20One%20Stone!%20I%20need%20parts%20for%20my%20vehicle." target="_blank" class="veh-btn" aria-label="Enquire about other make">Other Make →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- SPECIALIST SECTION -->
   <section class="section">
@@ -1159,6 +1250,39 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
     </div>
   </div>
 
+  <!-- FAQ ACCORDION -->
+  <section class="faq-section section-alt">
+    <div class="container">
+      <div class="section-header center fade-in">
+        <div class="eyebrow" style="justify-content:center">Got Questions?</div>
+        <h2 class="heading h-sm" style="margin-bottom:12px">Frequently Asked</h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="faq-list fade-in d1">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Do you sell genuine OEM parts?<span class="faq-icon">+</span></button>
+          <div class="faq-a" role="region"><p>We stock high-quality aftermarket and used parts for ex-Japanese vehicles. Our exclusive Kanagava brand is OE-equivalent — engineered to the same specification as genuine parts at a fraction of the cost. We also stock GUD, NGK, Castrol and Caltex branded products.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Do you have parts for my specific Nissan Caravan model?<span class="faq-icon">+</span></button>
+          <div class="faq-a" role="region"><p>Yes — we are Zimbabwe's leading specialist for the Nissan Caravan E24, E25, and E26 (NV350). We stock body panels, mechanical components, filters, lighting, and more specifically for these models. WhatsApp us with your chassis number for exact fitment confirmation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I order a part you don't currently stock?<span class="faq-icon">+</span></button>
+          <div class="faq-a" role="region"><p>Absolutely. WhatsApp or call us with your part details and we will source it for you. We have strong supply chain relationships and can usually locate hard-to-find parts within a few days.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I know if a part will fit my vehicle?<span class="faq-icon">+</span></button>
+          <div class="faq-a" role="region"><p>Send us your vehicle's make, model, year, and chassis/VIN number via WhatsApp. Our team will confirm compatibility before you make any trip to our branches. We've been matching parts since 2011 — no guesswork.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Do you offer bulk or trade pricing?<span class="faq-icon">+</span></button>
+          <div class="faq-a" role="region"><p>Yes. We work with mechanics, workshops, and fleet operators across Harare. Contact us directly to discuss trade accounts and volume pricing. Call 0772 904 805 or email info@onestonezw.co.zw.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="contact-grid">
       <div class="fade-in">
@@ -1425,6 +1549,104 @@ function submitContactForm() {
   }, 4500);
 }
 
+/* ── Open/Closed Status ── */
+function updateStatus() {
+  const now = new Date();
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+  const zim = new Date(utc + 2 * 3600000);
+  const h = zim.getHours(), m = zim.getMinutes(), d = zim.getDay();
+  const mins = h * 60 + m;
+  let open = false;
+  if (d >= 1 && d <= 5) open = mins >= 450 && mins < 1050;
+  if (d === 6)           open = mins >= 450 && mins < 780;
+  const el = document.getElementById('navStatus');
+  const txt = document.getElementById('statusText');
+  if (!el || !txt) return;
+  el.classList.toggle('closed', !open);
+  txt.textContent = open ? 'Open Now' : 'Closed';
+}
+
+/* ── FAQ Accordion ── */
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => {
+    q.classList.remove('open');
+    q.setAttribute('aria-expanded', 'false');
+    q.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    answer.classList.add('open');
+  }
+}
+
+/* ── Scroll-to-Top ── */
+function initScrollTop() {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 320);
+  }, {passive: true});
+}
+
+/* ── Lightbox ── */
+function initLightbox() {
+  document.addEventListener('click', e => {
+    const wrap = e.target.closest('.card-image');
+    if (!wrap) return;
+    const img = wrap.querySelector('img.loaded');
+    if (!img) return;
+    e.stopPropagation();
+    openLightbox(img.src, img.alt);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+  // cursor hint
+  document.addEventListener('mouseover', e => {
+    const wrap = e.target.closest('.card-image');
+    if (wrap) wrap.style.cursor = 'zoom-in';
+  });
+}
+
+function openLightbox(src, alt) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const cap = document.getElementById('lightboxCaption');
+  img.src = src;
+  img.alt = alt || '';
+  if (cap) cap.textContent = alt || '';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (e && !e.target.closest('.lightbox-close') && e.target.id !== 'lightbox') return;
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { document.getElementById('lightboxImg').src = ''; }, 300);
+}
+
+/* ── Filter Count Badges ── */
+function initFilterCounts() {
+  const counts = {};
+  document.querySelectorAll('#catalogueGrid .product-card[data-category]').forEach(c => {
+    const cat = c.dataset.category;
+    counts[cat] = (counts[cat] || 0) + 1;
+  });
+  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const m = (btn.getAttribute('onclick') || '').match(/'([^']+)'\s*\)/);
+    if (!m) return;
+    const cat = m[1];
+    const n = cat === 'all' ? total : (counts[cat] || 0);
+    if (n > 0) btn.textContent = btn.textContent.split('(')[0].trim() + ' (' + n + ')';
+  });
+}
+
 /* ── Toast ── */
 function showToast(msg, type = 'info') {
   let wrap = document.getElementById('toastWrap');
@@ -1465,7 +1687,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initCounters();
   initParallax();
+  initScrollTop();
+  initLightbox();
+  initFilterCounts();
+  updateStatus();
+  setInterval(updateStatus, 60000); // re-check every minute
 });
 </script>
+
+<!-- ── SCROLL TO TOP ── -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <span class="lightbox-caption" id="lightboxCaption"></span>
+</div>
+
 </body>
 </html>
